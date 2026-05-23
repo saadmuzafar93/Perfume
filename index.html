@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LuxuryScent Perfume</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+      font-family:'Poppins',sans-serif;
+    }
+
+    html,body{
+      overflow-x:hidden;
+      background:#0b0b0b;
+      color:white;
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    section{
+      padding:100px 7%;
+    }
+
+    .container{
+      max-width:1400px;
+      margin:auto;
+    }
+
+    .title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .title h2{
+      font-size:clamp(2rem,5vw,3.3rem);
+      color:gold;
+      margin-bottom:10px;
+    }
+
+    .title p{
+      color:#bdbdbd;
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 32px;
+      border-radius:50px;
+      text-decoration:none;
+      background:gold;
+      color:black;
+      font-weight:600;
+      transition:.3s;
+      border:none;
+      cursor:pointer;
+    }
+
+    .btn:hover{
+      transform:translateY(-5px);
+      background:white;
+      box-shadow:0 10px 30px rgba(255,215,0,.3);
+    }
+
+    /* HEADER */
+
+    header{
+      position:fixed;
+      width:100%;
+      top:0;
+      left:0;
+      z-index:1000;
+      padding:18px 7%;
+      background:rgba(0,0,0,.55);
+      backdrop-filter:blur(12px);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .logo{
+      font-size:30px;
+      font-weight:700;
+      color:gold;
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
+      gap:25px;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:white;
+      transition:.3s;
+      font-weight:500;
+    }
+
+    nav a:hover{
+      color:gold;
+    }
+
+    .menu{
+      display:none;
+      font-size:28px;
+      cursor:pointer;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:60px;
+      flex-wrap:wrap;
+      background:
+      linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+      url('https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=1400');
+      background-size:cover;
+      background-position:center;
+    }
+
+    .hero-text{
+      flex:1 1 500px;
+    }
+
+    .hero-text h1{
+      font-size:clamp(2.8rem,7vw,5.5rem);
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .hero-text span{
+      color:gold;
+    }
+
+    .hero-text p{
+      color:#d1d1d1;
+      line-height:1.9;
+      max-width:650px;
+      margin-bottom:35px;
+      font-size:1.05rem;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .hero-image{
+      flex:1 1 400px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .hero-image img{
+      max-width:430px;
+      object-fit:contain;
+      animation:float 4s ease-in-out infinite;
+      filter:drop-shadow(0 20px 40px rgba(0,0,0,.6));
+    }
+
+    @keyframes float{
+      0%,100%{
+        transform:translateY(0);
+      }
+      50%{
+        transform:translateY(-18px);
+      }
+    }
+
+    /* ABOUT */
+
+    .about{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:50px;
+      align-items:center;
+    }
+
+    .about-image img{
+      border-radius:25px;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .about-text p{
+      color:#cfcfcf;
+      line-height:1.9;
+      margin-bottom:20px;
+    }
+
+    /* SERVICES */
+
+    .services-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .service-box{
+      background:#151515;
+      padding:40px 30px;
+      border-radius:24px;
+      text-align:center;
+      transition:.4s;
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .service-box:hover{
+      transform:translateY(-10px);
+      box-shadow:0 15px 40px rgba(255,215,0,.15);
+      border-color:rgba(255,215,0,.2);
+    }
+
+    .service-box i{
+      font-size:42px;
+      color:gold;
+      margin-bottom:20px;
+    }
+
+    .service-box h3{
+      margin-bottom:12px;
+    }
+
+    .service-box p{
+      color:#c7c7c7;
+      line-height:1.7;
+    }
+
+    /* PRODUCTS */
+
+    .category-title{
+      text-align:center;
+      margin:70px 0 35px;
+      font-size:clamp(1.7rem,4vw,2.5rem);
+      color:gold;
+    }
+
+    .products-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:28px;
+    }
+
+    .product-card{
+      background:#151515;
+      border-radius:24px;
+      overflow:hidden;
+      transition:.4s;
+      display:flex;
+      flex-direction:column;
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .product-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 18px 45px rgba(255,215,0,.12);
+    }
+
+    .product-card img{
+      height:300px;
+      object-fit:cover;
+    }
+
+    .product-info{
+      padding:22px;
+      display:flex;
+      flex-direction:column;
+      flex-grow:1;
+    }
+
+    .product-info h3{
+      margin-bottom:10px;
+      font-size:1.2rem;
+    }
+
+    .product-info p{
+      color:#bfbfbf;
+      line-height:1.7;
+      margin-bottom:16px;
+    }
+
+    .price{
+      color:gold;
+      font-size:1.2rem;
+      margin-bottom:20px;
+      font-weight:600;
+    }
+
+    .product-info .btn{
+      margin-top:auto;
+    }
+
+    /* STATS */
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+    }
+
+    .stat-box{
+      background:#151515;
+      padding:45px 25px;
+      border-radius:24px;
+      text-align:center;
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .stat-box h2{
+      color:gold;
+      font-size:3rem;
+      margin-bottom:10px;
+    }
+
+    .stat-box p{
+      color:#cfcfcf;
+    }
+
+    /* BLOG */
+
+    .blog-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:28px;
+    }
+
+    .blog-card{
+      background:#151515;
+      border-radius:24px;
+      overflow:hidden;
+      transition:.4s;
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .blog-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 15px 40px rgba(255,215,0,.12);
+    }
+
+    .blog-card img{
+      height:240px;
+      object-fit:cover;
+    }
+
+    .blog-content{
+      padding:24px;
+    }
+
+    .blog-content p{
+      color:#cfcfcf;
+      line-height:1.8;
+      margin:14px 0 20px;
+    }
+
+    /* CONTACT */
+
+    .contact-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:40px;
+      align-items:stretch;
+    }
+
+    .contact-info,
+    .contact form{
+      background:#151515;
+      padding:35px;
+      border-radius:24px;
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .contact-info p{
+      margin:18px 0;
+      color:#cfcfcf;
+    }
+
+    .contact form{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+
+    .contact input,
+    .contact textarea{
+      padding:15px 18px;
+      border:none;
+      outline:none;
+      background:#0f0f0f;
+      color:white;
+      border-radius:14px;
+    }
+
+    /* AUTH */
+
+    .auth-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:35px;
+    }
+
+    .auth-box{
+      background:#151515;
+      padding:40px;
+      border-radius:24px;
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .auth-box h3{
+      margin-bottom:25px;
+      font-size:1.7rem;
+    }
+
+    .auth-box form{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+
+    .auth-box input{
+      padding:15px 18px;
+      border:none;
+      outline:none;
+      background:#0f0f0f;
+      border-radius:14px;
+      color:white;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:black;
+      text-align:center;
+      padding:40px 7%;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+
+    footer h2{
+      color:gold;
+      margin-bottom:12px;
+    }
+
+    footer p{
+      color:#bdbdbd;
+    }
+
+    .socials{
+      margin:25px 0;
+      display:flex;
+      justify-content:center;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .socials i{
+      width:45px;
+      height:45px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#151515;
+      transition:.3s;
+      cursor:pointer;
+    }
+
+    .socials i:hover{
+      background:gold;
+      color:black;
+      transform:translateY(-5px);
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:950px){
+
+      header{
+        padding:18px 6%;
+      }
+
+      nav{
+        position:absolute;
+        top:85px;
+        right:-100%;
+        width:260px;
+        background:#111;
+        flex-direction:column;
+        align-items:flex-start;
+        padding:25px;
+        border-radius:18px;
+        transition:.4s;
+        box-shadow:0 20px 40px rgba(0,0,0,.4);
+      }
+
+      nav.active{
+        right:20px;
+      }
+
+      .menu{
+        display:block;
+      }
+
+      .hero{
+        text-align:center;
+        padding-top:150px;
+      }
+
+      .hero-text p{
+        margin:auto auto 35px;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+    }
+
+    @media(max-width:600px){
+
+      section{
+        padding:80px 6%;
+      }
+
+      .hero-image img{
+        max-width:300px;
+      }
+
+      .product-card img{
+        height:250px;
+      }
+
+      .auth-box,
+      .contact-info,
+      .contact form{
+        padding:28px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="logo">LuxuryScent</div>
+
+    <nav id="nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#products">Products</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+      <a href="#auth">Login</a>
+    </nav>
+
+    <div class="menu" id="menu">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="container hero">
+
+      <div class="hero-text">
+
+        <h1>Luxury <span>Perfume</span><br>Collection 2026</h1>
+
+        <p>
+          Discover premium perfumes for men and women with long-lasting fragrance, luxury packaging, and elegant modern style.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#products" class="btn">Shop Now</a>
+          <a href="#about" class="btn">Explore More</a>
+        </div>
+
+      </div>
+
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1000" alt="Perfume">
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="container">
+
+      <div class="title">
+        <h2>About Us</h2>
+        <p>Luxury fragrances inspired by elegance, beauty, and premium fashion lifestyle.</p>
+      </div>
+
+      <div class="about">
+
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=1000" alt="About">
+        </div>
+
+        <div class="about-text">
+
+          <p>
+            LuxuryScent creates premium perfumes for modern men and women who love elegance and confidence.
+          </p>
+
+          <p>
+            Our fragrances are crafted with imported ingredients and luxury packaging to provide a long-lasting premium experience.
+          </p>
+
+          <a href="#products" class="btn">Discover Collection</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section id="services">
+
+    <div class="container">
+
+      <div class="title">
+        <h2>Our Services</h2>
+        <p>Premium services designed for luxury fragrance lovers.</p>
+      </div>
+
+      <div class="services-container">
+
+        <div class="service-box">
+          <i class="fa-solid fa-truck-fast"></i>
+          <h3>Fast Delivery</h3>
+          <p>Worldwide fast and secure perfume shipping service.</p>
+        </div>
+
+        <div class="service-box">
+          <i class="fa-solid fa-gift"></i>
+          <h3>Luxury Packaging</h3>
+          <p>Elegant packaging for gifts and premium collections.</p>
+        </div>
+
+        <div class="service-box">
+          <i class="fa-solid fa-headset"></i>
+          <h3>24/7 Support</h3>
+          <p>Professional customer support available anytime.</p>
+        </div>
+
+        <div class="service-box">
+          <i class="fa-solid fa-crown"></i>
+          <h3>Premium Quality</h3>
+          <p>Long-lasting imported fragrances with luxury feel.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PRODUCTS -->
+
+  <section id="products">
+
+    <div class="container">
+
+      <div class="title">
+        <h2>Our Products</h2>
+        <p>Exclusive perfume collections for men and women.</p>
+      </div>
+
+      <h3 class="category-title">Men Perfumes</h3>
+
+      <div class="products-container">
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000">
+          <div class="product-info">
+            <h3>Royal Oud</h3>
+            <p>Luxury oud fragrance for powerful personality.</p>
+            <div class="price">$120</div>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?q=80&w=1000">
+          <div class="product-info">
+            <h3>Night Secret</h3>
+            <p>Elegant fragrance for evening luxury moments.</p>
+            <div class="price">$160</div>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1608528577891-eb055944f2e7?q=80&w=1000">
+          <div class="product-info">
+            <h3>Silver Touch</h3>
+            <p>Fresh modern fragrance with premium aroma.</p>
+            <div class="price">$140</div>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1000">
+          <div class="product-info">
+            <h3>Gentle Storm</h3>
+            <p>Strong masculine perfume with smooth notes.</p>
+            <div class="price">$170</div>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+        </div>
+
+      </div>
+
+      <h3 class="category-title">Ladies Perfumes</h3>
+
+      <div class="products-container">
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1619994403073-2cec2e7998d5?q=80&w=1000">
+          <div class="product-info">
+            <h3>Diamond Love</h3>
+            <p>Luxury feminine fragrance with floral notes.</p>
+            <div class="price">$220</div>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1000">
+          <div class="product-info">
+            <h3>Secret Flower</h3>
+            <p>Soft romantic fragrance for elegant style.</p>
+            <div class="price">$160</div>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1519669556878-63bdad8a1a49?q=80&w=1000">
+          <div class="product-info">
+            <h3>Velvet Bloom</h3>
+            <p>Premium sweet floral perfume collection.</p>
+            <div class="price">$135</div>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?q=80&w=1000">
+          <div class="product-info">
+            <h3>Rose Queen</h3>
+            <p>Luxury rose fragrance with elegant finish.</p>
+            <div class="price">$145</div>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- STATS -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="stats">
+
+        <div class="stat-box">
+          <h2 class="counter" data-target="2500">0</h2>
+          <p>Happy Clients</p>
+        </div>
+
+        <div class="stat-box">
+          <h2 class="counter" data-target="500">0</h2>
+          <p>Luxury Products</p>
+        </div>
+
+        <div class="stat-box">
+          <h2 class="counter" data-target="50">0</h2>
+          <p>Global Awards</p>
+        </div>
+
+        <div class="stat-box">
+          <h2 class="counter" data-target="24">0</h2>
+          <p>Support Hours</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- BLOG -->
+
+  <section id="blog">
+
+    <div class="container">
+
+      <div class="title">
+        <h2>Latest Blog</h2>
+        <p>Explore fragrance trends and perfume lifestyle tips.</p>
+      </div>
+
+      <div class="blog-container">
+
+        <div class="blog-card">
+          <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1000">
+          <div class="blog-content">
+            <h3>Top Perfume Trends</h3>
+            <p>Discover the latest luxury fragrance trends in fashion industry.</p>
+            <a href="#" class="btn">Read More</a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1000">
+          <div class="blog-content">
+            <h3>Fragrance Tips</h3>
+            <p>Learn professional tips to make your perfume last longer.</p>
+            <a href="#" class="btn">Read More</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <div class="container">
+
+      <div class="title">
+        <h2>Contact Us</h2>
+        <p>Get in touch with our luxury fragrance support team.</p>
+      </div>
+
+      <div class="contact-container">
+
+        <div class="contact-info">
+          <h3>Get In Touch</h3>
+          <p>Email: support@luxuryscent.com</p>
+          <p>Phone: +92 300 1234567</p>
+          <p>Location: Karachi, Pakistan</p>
+        </div>
+
+        <form>
+          <input type="text" placeholder="Your Name">
+          <input type="email" placeholder="Your Email">
+          <textarea rows="6" placeholder="Your Message"></textarea>
+          <button class="btn">Send Message</button>
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- LOGIN -->
+
+  <section id="auth">
+
+    <div class="container">
+
+      <div class="title">
+        <h2>Login / Sign Up</h2>
+        <p>Create your account and explore premium collections.</p>
+      </div>
+
+      <div class="auth-container">
+
+        <div class="auth-box">
+
+          <h3>Login</h3>
+
+          <form>
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <button class="btn">Login</button>
+          </form>
+
+        </div>
+
+        <div class="auth-box">
+
+          <h3>Create Account</h3>
+
+          <form>
+            <input type="text" placeholder="Full Name">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <button class="btn">Sign Up</button>
+
+  </form>
+
+</div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <h2>LuxuryScent</h2>
+
+    <p>Premium luxury perfumes for modern lifestyle.</p>
+
+    <div class="socials">
+      <i class="fa-brands fa-facebook-f"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-x-twitter"></i>
+      <i class="fa-brands fa-youtube"></i>
+    </div>
+
+    <p>© 2026 LuxuryScent. All Rights Reserved.</p>
+
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    // MOBILE MENU
+
+    const menu = document.getElementById("menu");
+    const nav = document.getElementById("nav");
+
+    menu.onclick = () => {
+      nav.classList.toggle("active");
+    };
+
+    // COUNTER ANIMATION
+
+    const counters = document.querySelectorAll('.counter');
+
+    counters.forEach(counter => {
+
+      counter.innerText = '0';
+
+      const updateCounter = () => {
+
+        const target = +counter.getAttribute('data-target');
+        const c = +counter.innerText;
+
+        const increment = target / 200;
+
+        if(c < target){
+
+          counter.innerText = `${Math.ceil(c + increment)}`;
+
+          setTimeout(updateCounter,10);
+
+        } else {
+
+          counter.innerText = target;
+
+        }
+
+      };
+
+      updateCounter();
+
+    });
+
+  </script>
+
+</body>
+        </html>
